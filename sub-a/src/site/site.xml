@@ -37,7 +37,7 @@ THE SOFTWARE.
 		<version>1.0</version>
 	</skin>
 	<bannerLeft>
-		<name>${project.name}</name>
+		<name>${project.name} sub-a</name>
 		<!--<src>images/mylogo.png</src>-->
 		<href>${project.url}/</href>
 	</bannerLeft>
