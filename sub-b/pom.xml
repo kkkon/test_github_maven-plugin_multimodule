@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <prerequisites>
+    <maven>3.0.5</maven>
+  </prerequisites>
+
+  <parent>
+    <groupId>jp.ne.sakura.kkkon.test</groupId>
+    <artifactId>test_github_maven-plugin_multimodule_parent</artifactId>
+    <version>0.1-SNAPSHOT</version>
+  </parent>
+
+  <groupId>jp.ne.sakura.kkkon.test</groupId>
+  <artifactId>test_github_maven-plugin_multimodule_sub-b</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>test_github_maven-plugin_multimodule sub-b</name>
+
+  <modules>
+    <module>subsub-b</module>
+  </modules>
+
+</project>
