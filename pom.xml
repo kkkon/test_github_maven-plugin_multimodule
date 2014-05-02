@@ -86,4 +86,22 @@
     </plugins>
   </reporting>
 
+  <distributionManagement>
+    <!--
+    <repository>
+      <id>release-kkkon.github.io</id>
+      <name>Test MultiModule github maven-plugin Maven Release Repository</name>
+      <url>http://kkkon.github.io/test_github_maven-plugin_multimodule/maven/releases</url>
+    </repository>
+    -->
+    <site>
+      <id>kkkon.github.io</id>
+      <name>Test MultiModule github maven-plugin Maven Site</name>
+      <url>http://kkkon.github.io/test_github_maven-plugin_multimodule</url>
+      <!--
+Failed to execute goal org.apache.maven.plugins:maven-site-plugin:3.3:stage (default-cli) on project test_github_maven-plugin_multimodule_parent: Missing distribution management in project test_github_maven-plugin_multimodule parent (jp.ne.sakura.kkkon.test:test_github_maven-plugin_multimodule_parent:0.1-SNAPSHOT) -> [Help 1]
+      -->
+    </site>
+  </distributionManagement>
+
 </project>
