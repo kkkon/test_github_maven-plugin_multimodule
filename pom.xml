@@ -71,6 +71,7 @@
         <version>2.7</version>
         <reportSets>
           <reportSet>
+            <inherited>false</inherited>
             <reports>
               <report>index</report>
               <report>dependencies</report>
