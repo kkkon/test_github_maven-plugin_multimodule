@@ -13,7 +13,10 @@
   <name>test_github_maven-plugin_multimodule parent</name>
 
   <modules>
-    <module>top-set</module>
+    <module>sub-a</module>
+    <module>sub-b</module>
+    <module>sub-c</module>
+    <module>sub-d</module>
   </modules>
 
   <url>http://kkkon.github.io/test_github_maven-plugin_multimodule</url>
@@ -64,6 +67,31 @@
         </configuration>
       </plugin>
 
+      <plugin>
+        <groupId>com.github.github</groupId>
+        <artifactId>site-maven-plugin</artifactId>
+        <version>0.10-SNAPSHOT</version>
+        <inherited>true</inherited>
+        <configuration>
+          <message>Maven artifacts for ${project.artifactId} ${project.version}</message>
+          <noJekyll>true</noJekyll>
+          <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
+          <excludes>
+            <exclude>snapshots</exclude>
+          </excludes>
+          <branch>refs/heads/gh-pages</branch>
+          <merge>true</merge>
+          <dryRun>${github.site.dryRun}</dryRun>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>deploy</phase>
+            <goals>
+              <goal>site</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 
     </plugins>
   </build>
