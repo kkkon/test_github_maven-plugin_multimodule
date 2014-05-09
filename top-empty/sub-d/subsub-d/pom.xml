@@ -8,15 +8,15 @@
 
   <parent>
     <groupId>jp.ne.sakura.kkkon.test</groupId>
-    <artifactId>test_github_maven-plugin_multimodule_sub-d</artifactId>
+    <artifactId>test_github_maven-plugin_multimodule_top-empty_sub-d</artifactId>
     <version>0.1-SNAPSHOT</version>
   </parent>
 
   <groupId>jp.ne.sakura.kkkon.test</groupId>
-  <artifactId>test_github_maven-plugin_multimodule_subsub-d</artifactId>
+  <artifactId>test_github_maven-plugin_multimodule_top-empty_subsub-d</artifactId>
   <version>0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>test_github_maven-plugin_multimodule subsub-d</name>
+  <name>test_github_maven-plugin_multimodule top-empty subsub-d</name>
 
   <build>
     <plugins>

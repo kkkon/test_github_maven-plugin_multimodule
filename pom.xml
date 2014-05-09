@@ -13,6 +13,7 @@
   <name>test_github_maven-plugin_multimodule parent</name>
 
   <modules>
+    <module>top-empty</module>
     <module>top-set</module>
   </modules>
 
