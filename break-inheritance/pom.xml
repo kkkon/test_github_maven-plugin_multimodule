@@ -7,15 +7,16 @@
   </prerequisites>
 
   <groupId>jp.ne.sakura.kkkon.test</groupId>
-  <artifactId>test_github_maven-plugin_multimodule_parent</artifactId>
+  <artifactId>test_github_maven-plugin_multimodule_break-inheritance</artifactId>
   <version>0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>test_github_maven-plugin_multimodule parent</name>
+  <name>test_github_maven-plugin_multimodule break-inheritance</name>
 
   <modules>
-    <module>break-inheritance</module>
-    <module>top-empty</module>
-    <module>top-set</module>
+    <module>sub-a</module>
+    <module>sub-b</module>
+    <module>sub-c</module>
+    <module>sub-d</module>
   </modules>
 
   <url>http://kkkon.github.io/test_github_maven-plugin_multimodule</url>
@@ -66,6 +67,32 @@
         </configuration>
       </plugin>
 
+      <plugin>
+        <groupId>com.github.github</groupId>
+        <artifactId>site-maven-plugin</artifactId>
+        <version>0.10-SNAPSHOT</version>
+        <inherited>false</inherited>
+        <configuration>
+          <message>Maven artifacts for ${project.artifactId} ${project.version}</message>
+          <noJekyll>true</noJekyll>
+          <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
+          <excludes>
+            <exclude>snapshots</exclude>
+          </excludes>
+          <branch>refs/heads/gh-pages</branch>
+          <merge>true</merge>
+          <path>maven</path>
+          <dryRun>${github.site.dryRun}</dryRun>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>deploy</phase>
+            <goals>
+              <goal>site</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 
     </plugins>
   </build>
@@ -121,7 +148,7 @@
       <name>Test MultiModule github maven-plugin Maven Site</name>
       <url>http://kkkon.github.io/test_github_maven-plugin_multimodule</url>
       <!--
-Failed to execute goal org.apache.maven.plugins:maven-site-plugin:3.3:stage (default-cli) on project test_github_maven-plugin_multimodule_parent: Missing distribution management in project test_github_maven-plugin_multimodule parent (jp.ne.sakura.kkkon.test:test_github_maven-plugin_multimodule_parent:0.1-SNAPSHOT) -> [Help 1]
+Failed to execute goal org.apache.maven.plugins:maven-site-plugin:3.3:stage (default-cli) on project test_github_maven-plugin_multimodule_break-inheritance: Missing distribution management in project test_github_maven-plugin_multimodule break-inheritance (jp.ne.sakura.kkkon.test:test_github_maven-plugin_multimodule_break-inheritance:0.1-SNAPSHOT) -> [Help 1]
       -->
     </site>
   </distributionManagement>
